@@ -1,15 +1,18 @@
-import "./App.css";
-// import TodoList from "./sections/Todolist/TodoList";
-import ToDo from './sections/ToDo/ToDo'
-function App() {
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Login from "./sections/Login/Login";
+import Signup from "./sections/Signup/Signup";
+import Home from "./sections/Home/Home";
+
+export default function App() {
   return (
     <>
-      <div className="mx-auto max-w-screen-2xl border">
-        {/* <TodoList /> */}
-        <ToDo />
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
-
-export default App;
