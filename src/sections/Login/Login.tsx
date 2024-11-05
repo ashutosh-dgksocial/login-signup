@@ -27,12 +27,13 @@ const Login = () => {
       return;
     }
     const ParseInfo = JSON.parse(getUserInfo);
-    if (
-      ParseInfo.password === inputData.password &&
-      ParseInfo.email === inputData.email
-    ) {
+    if (ParseInfo.password === inputData.password) {
+      
+      localStorage.setItem("isLoggedIn", "true");
+
       alert("Congratulation you become a pro dev...");
       setInputData({ email: "", password: "" });
+      
       navigate("/");
     } else {
       alert("Try again!!");

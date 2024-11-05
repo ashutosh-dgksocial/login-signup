@@ -31,6 +31,8 @@ const Signup = () => {
     try {
       const parsed = JSON.stringify(formData);
       localStorage.setItem(`userKey-${formData.email}`, parsed); // Store data
+      localStorage.setItem("userEmail", formData.email);
+      localStorage.setItem("userName", formData.name);
       alert("Form submitted successfully!");
       setFormData({ name: "", email: "", password: "", dob: "" }); // Clear fields
       navigate("/login");
